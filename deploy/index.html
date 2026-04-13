@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluxa Comex — Conformidade Aduaneira com Inteligência Avançada</title>
+
+  <!-- Inter — Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- TailwindCSS compilado -->
+  <link rel="stylesheet" href="./css/output.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230C2340'%3E%3Cpath fill-rule='evenodd' d='M12.516 2.17a.75.75 0 00-1.032 0 11.209 11.209 0 01-7.877 3.08.75.75 0 00-.722.515A12.74 12.74 0 002.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 00.374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 00-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08z' clip-rule='evenodd'/%3E%3C/svg%3E">
+
+  <style>[x-cloak]{display:none!important}</style>
+  <style>
+    html { scroll-behavior: smooth; }
+    body > main {
+      padding: 0;
+      display: block;
+      align-items: unset;
+      justify-content: unset;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .anim-fade-up        { animation: fadeInUp 0.65s cubic-bezier(.22,.68,0,1.2) both; }
+    .anim-fade-up-d1     { animation: fadeInUp 0.65s cubic-bezier(.22,.68,0,1.2) 0.12s both; }
+    .anim-fade-up-d2     { animation: fadeInUp 0.65s cubic-bezier(.22,.68,0,1.2) 0.24s both; }
+    .anim-fade-up-d3     { animation: fadeInUp 0.65s cubic-bezier(.22,.68,0,1.2) 0.36s both; }
+    .anim-mockup         { animation: fadeInUp 0.75s cubic-bezier(.22,.68,0,1.2) 0.2s both; }
+
+    .mockup-card {
+      transform: perspective(900px) rotateY(-5deg) rotateX(2deg);
+      transition: transform 0.4s ease;
+    }
+    .mockup-card:hover {
+      transform: perspective(900px) rotateY(-2deg) rotateX(1deg);
+    }
+  </style>
+</head>
+<body class="bg-[#f7f9fc] font-sans text-[#0C2340] min-h-screen flex flex-col">
+
+  <main class="flex-1 flex items-center justify-center px-4 py-12">
+<div
+  class="w-full"
+  x-data="{
+    scrolled: false,
+    mobileOpen: false,
+    init() {
+      window.addEventListener('scroll', () => {
+        this.scrolled = window.scrollY > 20;
+      }, { passive: true });
+    }
+  }"
+>
+
+  <!-- NAVBAR — Fixed top, navy background, shadow on scroll -->
+  <header
+    class="fixed top-0 left-0 right-0 z-50 bg-[#0C2340] transition-shadow duration-300"
+    :class="scrolled ? 'shadow-[0_2px_24px_rgba(0,0,0,0.35)]' : 'shadow-none'"
+    role="banner"
+  >
+    <div class="max-w-7xl mx-auto px-5 flex items-center justify-between h-16 lg:h-[64px]">
+
+      <!-- Logo -->
+      <a
+        href="#"
+        class="flex flex-col leading-none group shrink-0"
+        aria-label="Fluxa Comex — página inicial"
+      >
+        <span class="text-white font-bold text-lg tracking-tight group-hover:text-white/90 transition-colors">
+          Fluxa Comex
+        </span>
+        <span class="text-[#E09000] text-[11px] font-medium tracking-wide uppercase">
+          Conformidade Aduaneira com Inteligência Avançada
+        </span>
+      </a>
+
+      <!-- Nav links — desktop -->
+      <nav
+        class="hidden lg:flex items-center gap-7"
+        aria-label="Navegação principal"
+      >
+        <a
+          href="#funcionalidades"
+          class="text-white/75 text-sm font-medium hover:text-[#E09000] transition-colors"
+        >
+          Funcionalidades
+        </a>
+        <a
+          href="#roadmap"
+          class="text-white/75 text-sm font-medium hover:text-[#E09000] transition-colors"
+        >
+          Roadmap
+        </a>
+        <a
+          href="#demo"
+          class="text-white/75 text-sm font-medium hover:text-[#E09000] transition-colors"
+        >
+          Agendar Demo
+        </a>
+      </nav>
+
+      <!-- CTAs — desktop -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a
+          href="#demo"
+          class="bg-[#B87400] text-white text-sm font-semibold px-5 py-2 rounded-lg hover:bg-[#9a6200] transition-colors shadow-sm"
+        >
+          Agendar Demo
+        </a>
+      </div>
+
+      <!-- Hamburger — mobile -->
+      <button
+        class="lg:hidden flex items-center justify-center w-9 h-9 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+        @click="mobileOpen = !mobileOpen"
+        :aria-expanded="mobileOpen.toString()"
+        aria-controls="mobile-menu"
+        aria-label="Abrir menu"
+      >
+        <!-- Ícone hamburguer — visível quando fechado -->
+        <svg
+          x-show="!mobileOpen"
+          class="w-5 h-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+        <!-- Ícone X — visível quando aberto -->
+        <svg
+          x-show="mobileOpen"
+          x-cloak
+          class="w-5 h-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="18" y1="6"  x2="6" y2="18"/>
+          <line x1="6"  y1="6"  x2="18" y2="18"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Menu mobile dropdown -->
+    <div
+      id="mobile-menu"
+      x-show="mobileOpen"
+      x-cloak
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 -translate-y-2"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-2"
+      class="lg:hidden border-t border-white/10 bg-[#0C2340] px-5 py-4 flex flex-col gap-1"
+      role="navigation"
+      aria-label="Menu mobile"
+    >
+      <a
+        href="#funcionalidades"
+        @click="mobileOpen = false"
+        class="text-white/80 text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/10 hover:text-white transition-colors"
+      >
+        Funcionalidades
+      </a>
+      <a
+        href="#roadmap"
+        @click="mobileOpen = false"
+        class="text-white/80 text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/10 hover:text-white transition-colors"
+      >
+        Roadmap
+      </a>
+      <a
+        href="#demo"
+        @click="mobileOpen = false"
+        class="text-white/80 text-sm font-medium py-2.5 px-3 rounded-lg hover:bg-white/10 hover:text-white transition-colors"
+      >
+        Agendar Demo
+      </a>
+
+      <div class="mt-3 pt-3 border-t border-white/10 flex flex-col gap-2">
+        <a
+          href="#demo"
+          @click="mobileOpen = false"
+          class="bg-[#B87400] text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#9a6200] transition-colors text-center"
+        >
+          Agendar Demo
+        </a>
+      </div>
+    </div>
+
+  </header>
+  <!-- /NAVBAR -->
+
+
+  <!-- MAIN — Offset para compensar navbar fixa -->
+  <main class="pt-16">
+
+    <!-- SEÇÃO HERO -->
+    <section
+      id="hero"
+      class="bg-[#0C2340] relative overflow-hidden"
+      aria-labelledby="hero-title"
+    >
+      <!-- Gradiente decorativo de fundo — textura sutil -->
+      <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#1a3a5c]/40 blur-3xl -translate-y-1/2 translate-x-1/4"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#B87400]/10 blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-5 pt-28 pb-20 lg:pt-36 lg:pb-28">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+          <!-- COLUNA ESQUERDA: copy -->
+          <div class="flex flex-col gap-6">
+
+            <!-- Badge topo -->
+            <div class="anim-fade-up">
+              <span class="inline-flex items-center gap-1.5 bg-[#E09000]/15 text-[#E09000] text-[10px] font-semibold tracking-widest uppercase px-3 py-1.5 rounded-full border border-[#E09000]/25">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#E09000] animate-pulse inline-block"></span>
+                DUIMP em vigor · Novo processo de importação
+              </span>
+            </div>
+
+            <!-- Headline -->
+            <h1
+              id="hero-title"
+              class="anim-fade-up-d1 text-3xl lg:text-[2.85rem] font-bold text-white leading-[1.15] tracking-tight"
+            >
+              Seu escritório pronto para a
+              <span class="text-[#E09000]"> DUIMP</span>.<br>
+              Antes do prazo da Receita Federal.
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="anim-fade-up-d2 text-base lg:text-lg text-white/65 leading-[1.7] max-w-lg">
+              Valide NCMs, monte o Catálogo de Produtos DUIMP e gerencie todos os seus clientes importadores
+              — com precisão, rastreabilidade e conformidade regulatória.
+            </p>
+
+            <!-- CTAs -->
+            <div class="anim-fade-up-d3 flex flex-col sm:flex-row gap-3">
+              <a
+                href="#demo"
+                class="inline-flex items-center justify-center gap-2 bg-[#B87400] text-white text-sm font-semibold px-8 py-3.5 rounded-lg hover:bg-[#9a6200] transition-colors shadow-lg shadow-[#B87400]/30"
+              >
+                Agendar Demo Gratuita
+                <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4"/>
+                </svg>
+              </a>
+              <a
+                href="#funcionalidades"
+                class="inline-flex items-center justify-center gap-1.5 border border-white/25 text-white/80 text-sm font-medium px-8 py-3.5 rounded-lg hover:border-white/50 hover:text-white transition-all"
+              >
+                Ver como funciona
+                <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M8 3v10M4 9l4 4 4-4"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Credibilidade -->
+            <div class="anim-fade-up-d3 flex flex-wrap items-center gap-x-5 gap-y-2 pt-1">
+              <span class="flex items-center gap-1.5 text-white/50 text-xs">
+                <svg class="w-3.5 h-3.5 text-[#E09000] shrink-0" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm3.354-9.146a.5.5 0 00-.708-.708L7 8.793 5.354 7.146a.5.5 0 10-.708.708l2 2a.5.5 0 00.708 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                Sem contrato
+              </span>
+              <span class="flex items-center gap-1.5 text-white/50 text-xs">
+                <svg class="w-3.5 h-3.5 text-[#E09000] shrink-0" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm3.354-9.146a.5.5 0 00-.708-.708L7 8.793 5.354 7.146a.5.5 0 10-.708.708l2 2a.5.5 0 00.708 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                Demo gratuita
+              </span>
+              <span class="flex items-center gap-1.5 text-white/50 text-xs">
+                <svg class="w-3.5 h-3.5 text-[#E09000] shrink-0" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm3.354-9.146a.5.5 0 00-.708-.708L7 8.793 5.354 7.146a.5.5 0 10-.708.708l2 2a.5.5 0 00.708 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                Suporte incluído
+              </span>
+            </div>
+
+          </div><!-- /coluna esquerda -->
+
+
+          <!-- COLUNA DIREITA: mockup -->
+          <div class="anim-mockup flex justify-center lg:justify-end">
+            <div class="mockup-card w-full max-w-[500px] bg-white rounded-2xl shadow-[0_32px_80px_rgba(0,0,0,0.5)] border border-white/20 overflow-hidden">
+
+              <!-- Barra de browser -->
+              <div class="flex items-center gap-2 px-4 py-2.5 bg-gray-100 border-b border-gray-200">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#FF5F57]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#28CA41]"></span>
+                <div class="flex-1 mx-3 bg-white border border-gray-200 rounded px-3 py-1 text-[10px] text-gray-400 font-mono truncate">
+                  app.fluxacomex.com.br/validacoes
+                </div>
+              </div>
+
+              <!-- Inner layout: sidebar + content -->
+              <div class="flex" style="min-height:320px">
+
+                <!-- Sidebar navy -->
+                <div class="w-28 bg-[#0C2340] flex flex-col shrink-0">
+                  <div class="px-3 py-3 border-b border-white/10">
+                    <p class="text-white text-[9px] font-bold leading-tight">Fluxa Comex</p>
+                    <p class="text-[#E09000] text-[7px] uppercase tracking-wider leading-tight mt-0.5">Conformidade IA</p>
+                  </div>
+                  <nav class="flex flex-col gap-0.5 p-2 pt-2">
+                    <div class="flex items-center gap-1.5 px-2 py-1.5 text-white/50 text-[9px] rounded">
+                      <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+                      Dashboard
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-1.5 px-2 py-1.5 text-white/50 text-[9px]">
+                        <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-2.167-.576-4.2-1.584-5.953M12 4.939V3"/></svg>
+                        NCM ›
+                      </div>
+                      <div class="ml-4 flex flex-col gap-0.5">
+                        <span class="bg-white/10 text-[#E09000] text-[9px] font-medium px-2 py-1 rounded block">Validar NCM</span>
+                        <span class="text-white/40 text-[9px] px-2 py-0.5 block">Lote</span>
+                        <span class="text-white/40 text-[9px] px-2 py-0.5 block">Histórico</span>
+                        <span class="text-white/40 text-[9px] px-2 py-0.5 block">Revisão</span>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-1.5 px-2 py-1.5 text-white/50 text-[9px] mt-0.5 rounded">
+                      <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3zM6 6h.008v.008H6V6z"/></svg>
+                      Catálogo
+                    </div>
+                    <div class="flex items-center gap-1.5 px-2 py-1.5 text-white/50 text-[9px] rounded">
+                      <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+                      Clientes
+                    </div>
+                  </nav>
+                </div>
+
+                <!-- Content area -->
+                <div class="flex-1 bg-white flex flex-col min-w-0">
+                  <div class="flex items-center justify-between px-3 py-2 border-b border-gray-100">
+                    <span class="text-[10px] font-semibold text-[#0C2340]">Validação NCM</span>
+                    <span class="w-5 h-5 rounded-full bg-[#0C2340] text-white text-[8px] font-bold flex items-center justify-center shrink-0">YL</span>
+                  </div>
+                  <div class="p-3 flex flex-col gap-2.5">
+
+                    <!-- Formulário -->
+                    <div class="bg-[#f7f9fc] rounded-xl p-3 border border-gray-100">
+                      <p class="text-[9px] font-semibold text-[#0C2340] mb-2">Nova Validação</p>
+                      <div class="flex flex-col gap-1.5">
+                        <div>
+                          <p class="text-[8px] text-gray-400 mb-0.5 uppercase tracking-wide">Descrição do produto</p>
+                          <div class="bg-white border border-gray-200 rounded px-2 py-1.5 text-[9px] text-gray-600 leading-relaxed">Parafuso de aço inoxidável AISI 304, rosca métrica M8, cabeça sextavada (DIN 933)</div>
+                        </div>
+                        <div class="flex gap-2">
+                          <div class="flex-1">
+                            <p class="text-[8px] text-gray-400 mb-0.5 uppercase tracking-wide">Código NCM</p>
+                            <div class="bg-white border border-gray-200 rounded px-2 py-1.5 text-[9px] text-gray-600 font-mono">7318.15.00</div>
+                          </div>
+                          <div class="flex items-end shrink-0">
+                            <div class="bg-[#E09000] text-white text-[9px] font-semibold px-2.5 py-1.5 rounded whitespace-nowrap">Validar com IA →</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Resultado -->
+                    <div class="bg-[#f7f9fc] rounded-xl p-3 border border-gray-100">
+                      <div class="flex items-center justify-between mb-1.5">
+                        <p class="text-[9px] font-semibold text-[#0C2340]">Resultado</p>
+                        <div class="flex items-center gap-1.5">
+                          <span class="bg-[#eaf4ee] text-[#1a6e3c] text-[8px] font-bold px-1.5 py-0.5 rounded-full">● APROVADO</span>
+                          <span class="text-[8px] text-gray-500">Confiança: 95%</span>
+                        </div>
+                      </div>
+                      <div class="h-1 bg-gray-200 rounded-full mb-2"><div class="h-1 bg-[#1a6e3c] rounded-full" style="width:95%"></div></div>
+                      <p class="text-[8px] text-gray-500 leading-relaxed mb-2">NCM correto para fixadores de aço inox com rosca métrica, conforme NESH Seção XV, Cap. 73.</p>
+                      <div class="flex flex-wrap gap-1 mb-2">
+                        <span class="bg-[#E6EEF5] text-[#0C2340] text-[8px] font-mono font-medium px-1.5 py-0.5 rounded">II 16%</span>
+                        <span class="bg-[#E6EEF5] text-[#0C2340] text-[8px] font-mono font-medium px-1.5 py-0.5 rounded">IPI 6,5%</span>
+                        <span class="bg-[#FDF3DC] text-[#B87400] text-[8px] font-mono font-medium px-1.5 py-0.5 rounded">PIS 2,10%</span>
+                        <span class="bg-[#FDF3DC] text-[#B87400] text-[8px] font-mono font-medium px-1.5 py-0.5 rounded">COFINS 9,65%</span>
+                      </div>
+                      <span class="bg-[#eaf4ee] text-[#1a6e3c] text-[8px] font-medium px-1.5 py-0.5 rounded">✓ DUIMP Apto</span>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div><!-- /inner layout -->
+            </div><!-- /mockup-card -->
+          </div><!-- /coluna direita -->
+
+        </div><!-- /grid -->
+      </div><!-- /container -->
+    </section>
+    <!-- /HERO -->
+
+
+    <!-- SEÇÃO URGÊNCIA -->
+    <div
+      id="urgencia"
+      class="bg-[#FDF3DC] border-y border-amber-200"
+      role="region"
+      aria-label="Alerta cronograma DUIMP"
+    >
+      <div class="max-w-7xl mx-auto px-5 py-3">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-1 sm:gap-3 text-center sm:text-left">
+          <div class="flex items-center justify-center sm:justify-start gap-2 shrink-0">
+            <!-- Ícone de alerta âmbar -->
+            <svg class="w-4 h-4 text-[#B87400] shrink-0" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-[#7a4f00] font-semibold text-sm">
+              O Siscomex LI/DI está sendo desligado por fases.
+            </span>
+          </div>
+          <span class="text-[#7a4f00]/80 text-sm hidden sm:inline">
+            Seu escritório já está preparado para operar 100% via DUIMP?
+          </span>
+          <span class="text-[#7a4f00]/80 text-sm sm:hidden">
+            Seu escritório já está preparado para operar 100% via DUIMP?
+          </span>
+          <a
+            href="https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center sm:justify-start gap-1 text-[#B87400] text-sm font-medium underline underline-offset-2 hover:text-[#9a6200] transition-colors shrink-0"
+          >
+            Ver cronograma oficial
+            <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2.5 7h9M7.5 3l4 4-4 4"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- /URGÊNCIA -->
+
+
+    <!-- SEÇÃO PROBLEMA -->
+    <section
+      id="problema"
+      class="bg-white py-20 lg:py-28 px-5"
+      aria-labelledby="problema-title"
+    >
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Label + título + subtítulo -->
+        <div class="text-center mb-14">
+          <div class="flex items-center justify-center gap-3 mb-4">
+            <span class="block w-8 h-px bg-[#E09000]"></span>
+            <span class="text-[#B87400] text-xs font-semibold tracking-widest uppercase">O Desafio da Transição</span>
+            <span class="block w-8 h-px bg-[#E09000]"></span>
+          </div>
+          <h2
+            id="problema-title"
+            class="text-[#0C2340] font-bold text-2xl lg:text-4xl leading-tight mb-5"
+          >
+            A DUIMP é obrigatória.<br>O prazo não espera.
+          </h2>
+          <p class="text-gray-600 text-base lg:text-lg max-w-2xl mx-auto">
+            Despachantes que não adaptarem seus processos a tempo enfrentarão bloqueios operacionais, multas e perda de clientes.
+          </p>
+        </div>
+
+        <!-- 3 cards de dor -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+          <!-- Card 1 — Volume -->
+          <div class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow p-8">
+            <div class="w-8 h-8 mb-5">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="4" y="18" width="24" height="5" rx="1.5" fill="#0C2340" opacity="0.25"/>
+                <rect x="4" y="12" width="24" height="5" rx="1.5" fill="#0C2340" opacity="0.5"/>
+                <rect x="4" y="6" width="24" height="5" rx="1.5" fill="#0C2340"/>
+              </svg>
+            </div>
+            <p class="text-4xl font-bold text-[#0C2340] mb-2">100x</p>
+            <div class="w-full h-px bg-gray-100 mb-4"></div>
+            <h3 class="text-[#0C2340] font-semibold text-lg mb-3">Escala impossível</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Um escritório com 30 clientes e 50 produtos cada são 1.500 cadastros para montar no Catálogo de Produtos — manualmente, inviável.
+            </p>
+          </div>
+
+          <!-- Card 2 — Precisão -->
+          <div class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow p-8">
+            <div class="w-8 h-8 mb-5">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M16 3L5 7v9c0 6.075 4.666 11.742 11 13 6.334-1.258 11-6.925 11-13V7L16 3z" fill="#fdeaea" stroke="#8b1a1a" stroke-width="1.5"/>
+                <path d="M12 13l8 6M20 13l-8 6" stroke="#8b1a1a" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <p class="text-4xl font-bold text-[#8b1a1a] mb-2">75%</p>
+            <div class="w-full h-px bg-gray-100 mb-4"></div>
+            <h3 class="text-[#0C2340] font-semibold text-lg mb-3">Multa sobre o tributo devido</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Uma NCM errada no catálogo propaga o erro para todas as DUIMPs futuras — e abre fiscalização retroativa dos últimos 5 anos.
+            </p>
+          </div>
+
+          <!-- Card 3 — Complexidade -->
+          <div class="bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-shadow p-8">
+            <div class="w-8 h-8 mb-5">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="4" y="4" width="10" height="10" rx="1.5" fill="#E09000" opacity="0.7"/>
+                <rect x="18" y="4" width="10" height="10" rx="1.5" fill="#E09000"/>
+                <rect x="4" y="18" width="10" height="10" rx="1.5" fill="#E09000"/>
+                <rect x="18" y="18" width="10" height="10" rx="1.5" fill="#E09000" opacity="0.5"/>
+              </svg>
+            </div>
+            <p class="text-4xl font-bold text-[#B87400] mb-2">1.329</p>
+            <div class="w-full h-px bg-gray-100 mb-4"></div>
+            <h3 class="text-[#0C2340] font-semibold text-lg mb-3">Atributos diferentes por NCM</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Cada NCM exige atributos específicos com regras condicionantes. Preencher errado trava o registro da DUIMP no Portal Único.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /PROBLEMA -->
+
+
+    <!-- SEÇÃO SOLUÇÃO -->
+    <section
+      id="solucao"
+      class="py-20 lg:py-28 px-5"
+      style="background: linear-gradient(135deg, #0C2340 0%, #1a3a5c 100%);"
+      aria-labelledby="solucao-title"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+          <!-- COLUNA ESQUERDA — Mockup catálogo -->
+          <div class="order-2 lg:order-1">
+            <div class="bg-white rounded-2xl shadow-[0_24px_60px_rgba(0,0,0,0.3)] border border-white/20 overflow-hidden">
+
+              <!-- Browser bar -->
+              <div class="flex items-center gap-2 px-4 py-2.5 bg-gray-100 border-b border-gray-200">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#FF5F57]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#28CA41]"></span>
+                <div class="flex-1 mx-3 bg-white border border-gray-200 rounded px-3 py-1 text-[10px] text-gray-400 font-mono truncate">
+                  app.fluxacomex.com.br/catalogo
+                </div>
+              </div>
+
+              <!-- Inner layout: sidebar + content -->
+              <div class="flex" style="min-height:340px">
+
+                <!-- Sidebar navy -->
+                <div class="w-28 bg-[#0C2340] flex flex-col shrink-0">
+                  <div class="px-3 py-3 border-b border-white/10">
+                    <p class="text-white text-[9px] font-bold leading-tight">Fluxa Comex</p>
+                    <p class="text-[#E09000] text-[7px] uppercase tracking-wider leading-tight mt-0.5">Conformidade IA</p>
+                  </div>
+                  <nav class="flex flex-col gap-0.5 p-2 pt-2">
+                    <div class="flex items-center gap-1.5 px-2 py-1.5 text-white/50 text-[9px] rounded">
+                      <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+                      Dashboard
+                    </div>
+                    <div class="flex items-center gap-1.5 px-2 py-1.5 text-white/50 text-[9px] rounded">
+                      <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-2.167-.576-4.2-1.584-5.953M12 4.939V3"/></svg>
+                      NCM
+                    </div>
+                    <div class="bg-white/10 rounded-lg">
+                      <div class="flex items-center gap-1.5 px-2 py-1.5 text-[#E09000] text-[9px] font-medium">
+                        <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3zM6 6h.008v.008H6V6z"/></svg>
+                        Catálogo
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-1.5 px-2 py-1.5 text-white/50 text-[9px] rounded mt-0.5">
+                      <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+                      Clientes
+                    </div>
+                  </nav>
+                </div>
+
+                <!-- Content area -->
+                <div class="flex-1 bg-white flex flex-col min-w-0">
+                  <div class="flex items-center justify-between px-3 py-2 border-b border-gray-100">
+                    <span class="text-[10px] font-semibold text-[#0C2340]">Catálogo de Produtos</span>
+                    <span class="w-5 h-5 rounded-full bg-[#0C2340] text-white text-[8px] font-bold flex items-center justify-center shrink-0">YL</span>
+                  </div>
+                  <div class="p-3 flex flex-col gap-2">
+
+                    <!-- Card produto -->
+                    <div class="bg-[#f7f9fc] rounded-xl p-3 border border-gray-100">
+                      <div class="flex items-start justify-between gap-2 mb-2">
+                        <p class="text-[9px] font-semibold text-[#0C2340] leading-snug">Parafuso aço inox M8 sextavado</p>
+                        <span class="shrink-0 bg-[#eaf4ee] text-[#1a6e3c] text-[8px] font-medium px-1.5 py-0.5 rounded">Aprovado</span>
+                      </div>
+                      <div class="flex items-center gap-2 flex-wrap">
+                        <span class="bg-[#E6EEF5] text-[#0C2340] text-[8px] font-mono px-1.5 py-0.5 rounded">7318.15.00</span>
+                        <span class="text-gray-400 text-[8px]">Fasteners China Co. · CN</span>
+                      </div>
+                    </div>
+
+                    <!-- Atributos DUIMP -->
+                    <div>
+                      <p class="text-[8px] text-gray-400 font-medium uppercase tracking-wide mb-1.5">Atributos DUIMP — 12 atributos</p>
+                      <div class="space-y-1.5 mb-2.5">
+                        <div class="flex items-center justify-between bg-[#f7f9fc] rounded px-2.5 py-1.5 border border-gray-100">
+                          <div><p class="text-[9px] text-gray-700">Uso aeronáutico?</p><p class="text-[7px] text-gray-400">BOOLEANO</p></div>
+                          <span class="text-[8px] text-gray-500 bg-white border border-gray-200 rounded px-1.5 py-0.5">Não</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-[#f7f9fc] rounded px-2.5 py-1.5 border border-gray-100">
+                          <div><p class="text-[9px] text-gray-700">Número de série</p><p class="text-[7px] text-gray-400">TEXTO</p></div>
+                          <span class="text-[8px] text-gray-500 bg-white border border-gray-200 rounded px-1.5 py-0.5 font-mono">SN-2024-M8</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-[#f7f9fc] rounded px-2.5 py-1.5 border border-gray-100">
+                          <div><p class="text-[9px] text-gray-700">Categoria regulatória</p><p class="text-[7px] text-gray-400">LISTA</p></div>
+                          <span class="text-[8px] text-gray-500 bg-white border border-gray-200 rounded px-1.5 py-0.5">Industrial</span>
+                        </div>
+                      </div>
+                      <div class="bg-[#E09000] text-white text-[9px] font-semibold py-2 rounded-lg text-center">
+                        Gerar Sugestões com IA ✨
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div><!-- /inner layout -->
+            </div>
+          </div>
+
+          <!-- COLUNA DIREITA — Copy -->
+          <div class="order-1 lg:order-2">
+            <!-- Label -->
+            <div class="flex items-center gap-3 mb-5">
+              <span class="block w-6 h-px bg-[#E09000]"></span>
+              <span class="text-[#E09000] text-xs font-semibold tracking-widest uppercase">A Solução</span>
+            </div>
+
+            <h2
+              id="solucao-title"
+              class="text-white font-bold text-2xl lg:text-4xl leading-tight mb-6"
+            >
+              Uma plataforma construída<br class="hidden lg:block"> para a realidade do despachante.
+            </h2>
+
+            <p class="text-white/65 text-base leading-relaxed mb-8">
+              A Fluxa Comex não é apenas mais um validador de NCM. É uma plataforma completa de conformidade aduaneira que guia seu escritório do cadastro do produto até a publicação no Portal Único — com rastreabilidade completa, do cadastro à publicação no Portal Único.
+            </p>
+
+            <!-- Proposta de valor -->
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 mt-0.5 shrink-0 text-[#E09000]" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-white/80 text-sm leading-relaxed">
+                  <strong class="text-white font-semibold">IA com score de confiança</strong> — saiba exatamente o grau de certeza de cada classificação
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 mt-0.5 shrink-0 text-[#E09000]" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-white/80 text-sm leading-relaxed">
+                  <strong class="text-white font-semibold">Revisão humana obrigatória antes da publicação</strong> — nenhum produto aprovado sem sua validação
+                </span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 mt-0.5 shrink-0 text-[#E09000]" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-white/80 text-sm leading-relaxed">
+                  <strong class="text-white font-semibold">Multi-tenant nativo</strong> — gerencie N importadores em uma única conta de despachante
+                </span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /SOLUÇÃO -->
+
+
+    <!-- SEÇÃO FUNCIONALIDADES -->
+    <section
+      id="funcionalidades"
+      class="bg-white py-20 lg:py-28 px-5"
+      aria-labelledby="funcionalidades-title"
+    >
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Cabeçalho -->
+        <div class="text-center mb-14">
+          <div class="inline-flex items-center gap-3 mb-4">
+            <span class="text-xs font-semibold tracking-widest uppercase text-[#B87400]">Disponível Agora</span>
+            <span class="inline-flex items-center gap-1 bg-[#eaf4ee] text-[#1a6e3c] text-xs font-medium px-2 py-0.5 rounded-full">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#1a6e3c] inline-block"></span>
+              Ativo
+            </span>
+          </div>
+          <h2 id="funcionalidades-title" class="text-2xl lg:text-4xl font-bold text-[#0C2340] mb-4 leading-tight">
+            Tudo que seu escritório precisa,<br class="hidden lg:block"> disponível hoje.
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Sem curva de aprendizado longa. Sem integração complexa. Comece a validar
+            NCMs e montar seu catálogo em minutos.
+          </p>
+        </div>
+
+        <!-- Grid de 8 cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Card 1 — Validação NCM com IA -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#0C2340]/20 hover:shadow-md transition-all">
+            <div class="w-10 h-10 rounded-xl bg-[#0C2340]/10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-[#0C2340]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-2.167-.576-4.2-1.584-5.953M12 4.939V3m0 0A11.96 11.96 0 0120.402 6"/>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-[#0C2340] text-base mb-2">Validação NCM com IA</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Descreva o produto em linguagem natural. A IA retorna o NCM correto com parecer fundamentado em NESH e legislação vigente.</p>
+          </div>
+
+          <!-- Card 2 — Score de Confiança -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#0C2340]/20 hover:shadow-md transition-all">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-[#E09000]/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-[#B87400]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/>
+                </svg>
+              </div>
+              <span class="bg-[#FDF3DC] text-[#B87400] text-xs font-semibold px-2 py-0.5 rounded-full">Exclusivo</span>
+            </div>
+            <h3 class="font-semibold text-[#0C2340] text-base mb-2">Score de confiança</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Cada classificação recebe um score de 0 a 100%. Classificações abaixo de 90% vão automaticamente para fila de revisão humana.</p>
+          </div>
+
+          <!-- Card 3 — Catálogo DUIMP -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#0C2340]/20 hover:shadow-md transition-all">
+            <div class="w-10 h-10 rounded-xl bg-[#0C2340]/10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-[#0C2340]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-[#0C2340] text-base mb-2">Catálogo de Produtos DUIMP</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Monte o catálogo com atributos corretos por NCM — os mesmos exigidos pelo Portal Único Siscomex, atualizados automaticamente.</p>
+          </div>
+
+          <!-- Card 4 — Preenchimento por IA -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#0C2340]/20 hover:shadow-md transition-all">
+            <div class="w-10 h-10 rounded-xl bg-[#E09000]/10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-[#B87400]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-[#0C2340] text-base mb-2">Atributos preenchidos por IA</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">A IA sugere os valores de cada atributo DUIMP com base na descrição do produto. Você revisa e aprova em segundos.</p>
+          </div>
+
+          <!-- Card 5 — Alíquotas Reais -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#0C2340]/20 hover:shadow-md transition-all">
+            <div class="w-10 h-10 rounded-xl bg-[#eaf4ee] flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-[#1a6e3c]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V13.5zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V18zm2.498-6.75h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V13.5zm0 2.25h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V18zm2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zM8.25 6h7.5v2.25h-7.5V6zM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.616 4.5 4.698V18a2.25 2.25 0 002.25 2.25h10.5A2.25 2.25 0 0019.5 18V4.698c0-1.082-.807-1.998-1.407-2.126A48.958 48.958 0 0012 2.25z"/>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-[#0C2340] text-base mb-2">Alíquotas reais por NCM</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">II, IPI, PIS e COFINS reais para 10.521 NCMs — direto da TIPI e TEC oficiais. Ex-tarifários e Drawback identificados.</p>
+          </div>
+
+          <!-- Card 6 — Alertas LPCO -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#0C2340]/20 hover:shadow-md transition-all">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-[#fdeaea] flex items-center justify-center">
+                <svg class="w-5 h-5 text-[#8b1a1a]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/>
+                </svg>
+              </div>
+              <span class="bg-[#FDF3DC] text-[#B87400] text-xs font-semibold px-2 py-0.5 rounded-full">Exclusivo</span>
+            </div>
+            <h3 class="font-semibold text-[#0C2340] text-base mb-2">Alertas automáticos de LPCO</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Identifica automaticamente os órgãos anuentes (ANVISA, MAPA, IBAMA...) e alerta sobre necessidade de LPCO antes da DUIMP.</p>
+          </div>
+
+          <!-- Card 7 — Multi-tenant -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#0C2340]/20 hover:shadow-md transition-all">
+            <div class="w-10 h-10 rounded-xl bg-[#0C2340]/10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-[#0C2340]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-semibold text-[#0C2340] text-base mb-2">Gestão multi-tenant</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Uma conta de despachante para gerenciar N clientes importadores. Cada cliente vê apenas seus próprios dados.</p>
+          </div>
+
+          <!-- Card 8 — Export Profissional -->
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#0C2340]/20 hover:shadow-md transition-all">
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-xl bg-[#0C2340]/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-[#0C2340]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m.75 12l3 3m0 0l3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                </svg>
+              </div>
+              <span class="bg-[#FDF3DC] text-[#B87400] text-xs font-semibold px-2 py-0.5 rounded-full">Exclusivo</span>
+            </div>
+            <h3 class="font-semibold text-[#0C2340] text-base mb-2">Export PDF e Excel profissional</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Parecer PDF auditável por validação e planilha Excel com análise completa de lotes — prontos para apresentar ao cliente.</p>
+          </div>
+
+        </div><!-- /grid -->
+
+        <!-- Rodapé da seção -->
+        <div class="mt-14 pt-8 border-t border-gray-100 text-center">
+          <p class="text-gray-500 text-sm mb-5">Todas as funcionalidades incluídas em todos os planos. Sem surpresas.</p>
+          <a href="#demo" class="inline-flex items-center gap-2 bg-[#E09000] hover:bg-[#B87400] text-white text-sm font-semibold px-6 py-3 rounded-xl transition-colors">
+            Agendar Demo Gratuita
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SEÇÃO MOCKUPS -->
+    <section
+      id="mockups"
+      class="bg-gray-50 py-20 lg:py-28 px-5"
+      aria-labelledby="mockups-title"
+    >
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Cabeçalho -->
+        <div class="text-center mb-12">
+          <span class="text-xs font-semibold tracking-widest uppercase text-[#B87400] block mb-3">A Plataforma</span>
+          <h2 id="mockups-title" class="text-2xl lg:text-4xl font-bold text-[#0C2340] mb-4 leading-tight">
+            Veja como funciona na prática.
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Interface construída para o fluxo real do despacho aduaneiro — sem complexidade desnecessária.
+          </p>
+        </div>
+
+        <!-- Sistema de abas Alpine.js -->
+        <div x-data="{ tab: 'validacao' }">
+
+          <!-- Tab buttons -->
+          <div class="flex border-b border-gray-200 mb-8 overflow-x-auto">
+            <button
+              @click="tab = 'validacao'"
+              :class="tab === 'validacao' ? 'text-[#0C2340] font-semibold border-b-2 border-[#B87400]' : 'text-gray-500 border-b-2 border-transparent hover:text-gray-700'"
+              class="px-6 pb-3 text-sm whitespace-nowrap transition-colors shrink-0"
+            >Validação NCM</button>
+            <button
+              @click="tab = 'catalogo'"
+              :class="tab === 'catalogo' ? 'text-[#0C2340] font-semibold border-b-2 border-[#B87400]' : 'text-gray-500 border-b-2 border-transparent hover:text-gray-700'"
+              class="px-6 pb-3 text-sm whitespace-nowrap transition-colors shrink-0"
+            >Catálogo DUIMP</button>
+            <button
+              @click="tab = 'clientes'"
+              :class="tab === 'clientes' ? 'text-[#0C2340] font-semibold border-b-2 border-[#B87400]' : 'text-gray-500 border-b-2 border-transparent hover:text-gray-700'"
+              class="px-6 pb-3 text-sm whitespace-nowrap transition-colors shrink-0"
+            >Gestão de Clientes</button>
+          </div>
+
+          <!-- MOCKUP 1: Validação NCM -->
+          <div x-show="tab === 'validacao'" class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+            <!-- Browser bar -->
+            <div class="flex items-center gap-2 px-4 py-2.5 bg-gray-100 border-b border-gray-200">
+              <span class="w-3 h-3 rounded-full bg-[#FF5F57]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#FFBD2E]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#28CA41]"></span>
+              <div class="flex-1 mx-4 bg-white border border-gray-200 rounded px-3 py-1 text-xs text-gray-400 font-mono truncate">app.fluxacomex.com.br/validacoes</div>
+            </div>
+            <!-- Inner layout -->
+            <div class="flex" style="min-height:420px">
+              <!-- Sidebar -->
+              <div class="w-44 bg-[#0C2340] flex flex-col shrink-0">
+                <div class="px-4 py-4 border-b border-white/10">
+                  <p class="text-white text-xs font-bold leading-tight">Fluxa Comex</p>
+                  <p class="text-[#E09000] text-[9px] uppercase tracking-wider leading-tight mt-0.5">Conformidade Aduaneira IA</p>
+                </div>
+                <nav class="flex flex-col gap-0.5 p-3 pt-3 text-xs">
+                  <div class="flex items-center gap-2 px-2 py-2 text-white/50 rounded-lg">
+                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+                    Dashboard
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2 px-2 py-2 text-white/50 rounded-lg">
+                      <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-2.167-.576-4.2-1.584-5.953M12 4.939V3"/></svg>
+                      NCM ›
+                    </div>
+                    <div class="ml-5 flex flex-col gap-0.5 mt-0.5">
+                      <span class="bg-white/10 text-[#E09000] text-xs font-medium px-2 py-1.5 rounded-lg block">Validar NCM</span>
+                      <span class="text-white/40 text-xs px-2 py-1 block">Validação em Lote</span>
+                      <span class="text-white/40 text-xs px-2 py-1 block">Histórico</span>
+                      <span class="text-white/40 text-xs px-2 py-1 block">Fila de Revisão</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2 px-2 py-2 text-white/50 rounded-lg mt-1">
+                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3zM6 6h.008v.008H6V6z"/></svg>
+                    Catálogo de Produtos
+                  </div>
+                  <div class="flex items-center gap-2 px-2 py-2 text-white/50 rounded-lg">
+                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5"/></svg>
+                    Operadores Estrangeiros
+                  </div>
+                  <div class="flex items-center gap-2 px-2 py-2 text-white/50 rounded-lg">
+                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+                    Meus Clientes
+                  </div>
+                </nav>
+              </div>
+              <!-- Content area -->
+              <div class="flex-1 bg-white flex flex-col min-w-0">
+                <div class="flex items-center justify-between px-5 py-3 border-b border-gray-100">
+                  <span class="text-sm font-semibold text-[#0C2340]">Validação NCM</span>
+                  <div class="w-7 h-7 rounded-full bg-[#0C2340] text-white text-[10px] font-bold flex items-center justify-center">YL</div>
+                </div>
+                <div class="p-5 grid grid-cols-2 gap-5">
+                  <!-- Form card -->
+                  <div class="bg-[#f7f9fc] rounded-xl p-4 border border-gray-100">
+                    <p class="text-xs font-semibold text-[#0C2340] mb-3">Nova Validação</p>
+                    <div class="flex flex-col gap-3">
+                      <div>
+                        <p class="text-[10px] text-gray-400 mb-1 uppercase tracking-wide font-medium">Descrição do produto</p>
+                        <div class="bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-xs text-gray-600 leading-relaxed">Parafuso de aço inoxidável AISI 304, rosca métrica M8, cabeça sextavada (DIN 933)</div>
+                      </div>
+                      <div>
+                        <p class="text-[10px] text-gray-400 mb-1 uppercase tracking-wide font-medium">Código NCM</p>
+                        <div class="bg-white border border-gray-200 rounded-lg px-3 py-2.5 text-xs text-gray-600 font-mono">7318.15.00</div>
+                      </div>
+                      <button class="w-full bg-[#E09000] text-white text-xs font-semibold py-2.5 rounded-lg cursor-default">Validar com IA →</button>
+                    </div>
+                  </div>
+                  <!-- Result card -->
+                  <div class="bg-[#f7f9fc] rounded-xl p-4 border border-gray-100">
+                    <div class="flex items-center justify-between mb-2">
+                      <p class="text-xs font-semibold text-[#0C2340]">Resultado</p>
+                      <div class="flex items-center gap-2">
+                        <span class="bg-[#eaf4ee] text-[#1a6e3c] text-[10px] font-bold px-2 py-0.5 rounded-full">● APROVADO</span>
+                        <span class="text-[10px] text-gray-500 font-medium">Confiança: 95%</span>
+                      </div>
+                    </div>
+                    <div class="h-1.5 bg-gray-200 rounded-full mb-3"><div class="h-1.5 bg-[#1a6e3c] rounded-full" style="width:95%"></div></div>
+                    <p class="text-xs text-gray-500 leading-relaxed mb-3">NCM correto para fixadores de aço inoxidável com rosca métrica, conforme NESH Seção XV, Cap. 73, item 12.</p>
+                    <p class="text-[10px] font-medium text-gray-400 uppercase tracking-wide mb-2">Alíquotas</p>
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                      <span class="bg-[#E6EEF5] text-[#0C2340] text-xs font-mono font-medium px-2 py-1 rounded-lg">II 16%</span>
+                      <span class="bg-[#E6EEF5] text-[#0C2340] text-xs font-mono font-medium px-2 py-1 rounded-lg">IPI 6,5%</span>
+                      <span class="bg-[#FDF3DC] text-[#B87400] text-xs font-mono font-medium px-2 py-1 rounded-lg">PIS 2,10%</span>
+                      <span class="bg-[#FDF3DC] text-[#B87400] text-xs font-mono font-medium px-2 py-1 rounded-lg">COFINS 9,65%</span>
+                    </div>
+                    <span class="bg-[#eaf4ee] text-[#1a6e3c] text-xs font-medium px-2.5 py-1 rounded-lg">✓ DUIMP Apto</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MOCKUP 2: Catálogo DUIMP -->
+          <div x-show="tab === 'catalogo'" class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+            <div class="flex items-center gap-2 px-4 py-2.5 bg-gray-100 border-b border-gray-200">
+              <span class="w-3 h-3 rounded-full bg-[#FF5F57]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#FFBD2E]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#28CA41]"></span>
+              <div class="flex-1 mx-4 bg-white border border-gray-200 rounded px-3 py-1 text-xs text-gray-400 font-mono truncate">app.fluxacomex.com.br/catalogo</div>
+            </div>
+            <div class="flex" style="min-height:420px">
+              <div class="w-44 bg-[#0C2340] flex flex-col shrink-0">
+                <div class="px-4 py-4 border-b border-white/10">
+                  <p class="text-white text-xs font-bold leading-tight">Fluxa Comex</p>
+                  <p class="text-[#E09000] text-[9px] uppercase tracking-wider leading-tight mt-0.5">Conformidade Aduaneira IA</p>
+                </div>
+                <nav class="flex flex-col gap-0.5 p-3 pt-3 text-xs">
+                  <div class="flex items-center gap-2 px-2 py-2 text-white/50 rounded-lg">
+                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+                    Dashboard
+                  </div>
+                  <div class="flex items-center gap-2 px-2 py-2 text-white/50 rounded-lg">
+                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-2.167-.576-4.2-1.584-5.953M12 4.939V3"/></svg>
+                    NCM
+                  </div>
+                  <div class="bg-white/10 rounded-lg">
+                    <div class="flex items-center gap-2 px-2 py-2 text-[#E09000] font-medium rounded-lg">
+                      <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3zM6 6h.008v.008H6V6z"/></svg>
+                      Catálogo de Produtos
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2 px-2 py-2 text-white/50 rounded-lg mt-1">
+                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5"/></svg>
+                    Operadores Estrangeiros
+                  </div>
+                  <div class="flex items-center gap-2 px-2 py-2 text-white/50 rounded-lg">
+                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+                    Meus Clientes
+                  </div>
+                </nav>
+              </div>
+              <div class="flex-1 bg-white flex flex-col min-w-0">
+                <div class="flex items-center justify-between px-5 py-3 border-b border-gray-100">
+                  <div class="flex items-center gap-3">
+                    <span class="text-sm font-semibold text-[#0C2340]">Catálogo de Produtos</span>
+                    <span class="bg-[#E6EEF5] text-[#0C2340] text-xs font-medium px-2 py-0.5 rounded-full">23 produtos</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-full bg-[#0C2340] text-white text-[10px] font-bold flex items-center justify-center">YL</div>
+                  </div>
+                </div>
+                <div class="p-5 flex flex-col gap-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-xs text-gray-400 flex items-center gap-2 max-w-xs">
+                      <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                      Buscar produtos...
+                    </div>
+                    <div class="bg-[#E09000] text-white text-xs font-semibold px-3 py-2 rounded-lg cursor-default">+ Novo</div>
+                  </div>
+                  <div class="border border-gray-200 rounded-xl p-4">
+                    <div class="flex items-start justify-between gap-3 mb-3">
+                      <div>
+                        <p class="text-sm font-semibold text-[#0C2340] mb-1">Parafuso aço inox M8 sextavado</p>
+                        <div class="flex items-center gap-2 flex-wrap">
+                          <span class="bg-[#E6EEF5] text-[#0C2340] text-xs font-mono px-2 py-0.5 rounded">7318.15.00</span>
+                          <span class="text-gray-400 text-xs">Fasteners China Co. · CN</span>
+                        </div>
+                      </div>
+                      <span class="shrink-0 bg-[#eaf4ee] text-[#1a6e3c] text-xs font-medium px-2 py-0.5 rounded-full">Aprovado</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                      <div class="flex-1">
+                        <div class="flex items-center justify-between mb-1">
+                          <span class="text-[10px] text-gray-400">Score IA</span>
+                          <span class="text-[10px] font-semibold text-[#1a6e3c]">95%</span>
+                        </div>
+                        <div class="h-1 bg-gray-200 rounded-full"><div class="h-1 bg-[#1a6e3c] rounded-full" style="width:95%"></div></div>
+                      </div>
+                      <span class="text-[10px] text-gray-400 shrink-0">12 atributos · 3 obrigatórios</span>
+                    </div>
+                  </div>
+                  <div class="border border-gray-100 rounded-xl px-4 py-3 flex items-center justify-between gap-3">
+                    <div class="flex items-center gap-3 min-w-0">
+                      <div class="min-w-0">
+                        <p class="text-sm font-medium text-[#0C2340] truncate">Notebook Intel Core i7</p>
+                        <span class="text-[10px] font-mono text-gray-400">8471.30.12</span>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3 shrink-0">
+                      <div class="flex items-center gap-1.5">
+                        <div class="w-16 h-1 bg-gray-200 rounded-full"><div class="h-1 bg-[#B87400] rounded-full" style="width:78%"></div></div>
+                        <span class="text-[10px] text-[#B87400] font-semibold">78%</span>
+                      </div>
+                      <span class="bg-[#fdf3dc] text-[#7a4f00] text-xs font-medium px-2 py-0.5 rounded-full">Pendente revisão</span>
+                    </div>
+                  </div>
+                  <div class="border border-gray-100 rounded-xl px-4 py-3 flex items-center justify-between gap-3">
+                    <div class="flex items-center gap-3 min-w-0">
+                      <div class="min-w-0">
+                        <p class="text-sm font-medium text-[#0C2340] truncate">Camiseta 100% algodão</p>
+                        <span class="text-[10px] font-mono text-gray-400">6109.10.00</span>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3 shrink-0">
+                      <div class="flex items-center gap-1.5">
+                        <div class="w-16 h-1 bg-gray-200 rounded-full"><div class="h-1 bg-[#1a6e3c] rounded-full" style="width:92%"></div></div>
+                        <span class="text-[10px] text-[#1a6e3c] font-semibold">92%</span>
+                      </div>
+                      <span class="bg-[#eaf4ee] text-[#1a6e3c] text-xs font-medium px-2 py-0.5 rounded-full">Aprovado</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MOCKUP 3: Gestão de Clientes -->
+          <div x-show="tab === 'clientes'" class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+            <div class="flex items-center gap-2 px-4 py-2.5 bg-gray-100 border-b border-gray-200">
+              <span class="w-3 h-3 rounded-full bg-[#FF5F57]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#FFBD2E]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#28CA41]"></span>
+              <div class="flex-1 mx-4 bg-white border border-gray-200 rounded px-3 py-1 text-xs text-gray-400 font-mono truncate">app.fluxacomex.com.br/clientes</div>
+            </div>
+            <div class="flex" style="min-height:420px">
+              <div class="w-44 bg-[#0C2340] flex flex-col shrink-0">
+                <div class="px-4 py-4 border-b border-white/10">
+                  <p class="text-white text-xs font-bold leading-tight">Fluxa Comex</p>
+                  <p class="text-[#E09000] text-[9px] uppercase tracking-wider leading-tight mt-0.5">Conformidade Aduaneira IA</p>
+                </div>
+                <nav class="flex flex-col gap-0.5 p-3 pt-3 text-xs">
+                  <div class="flex items-center gap-2 px-2 py-2 text-white/50 rounded-lg">
+                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+                    Dashboard
+                  </div>
+                  <div class="flex items-center gap-2 px-2 py-2 text-white/50 rounded-lg">
+                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.955 11.955 0 003 12c0 6.627 5.373 12 12 12s12-5.373 12-12c0-2.167-.576-4.2-1.584-5.953M12 4.939V3"/></svg>
+                    NCM
+                  </div>
+                  <div class="flex items-center gap-2 px-2 py-2 text-white/50 rounded-lg">
+                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3zM6 6h.008v.008H6V6z"/></svg>
+                    Catálogo de Produtos
+                  </div>
+                  <div class="flex items-center gap-2 px-2 py-2 text-white/50 rounded-lg">
+                    <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918"/></svg>
+                    Operadores Estrangeiros
+                  </div>
+                  <div class="bg-white/10 rounded-lg">
+                    <div class="flex items-center gap-2 px-2 py-2 text-[#E09000] font-medium">
+                      <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+                      Meus Clientes
+                    </div>
+                  </div>
+                </nav>
+              </div>
+              <div class="flex-1 bg-white flex flex-col min-w-0">
+                <div class="flex items-center justify-between px-5 py-2.5 bg-[#FDF3DC] border-b border-[#E09000]/20">
+                  <div class="flex items-center gap-2">
+                    <span class="text-[10px] text-[#7a4f00]">Atuando como:</span>
+                    <span class="text-[10px] font-semibold text-[#B87400]">Importadora Alpha Ltda · CNPJ 12.345.678/0001-99</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <button class="text-[10px] font-medium text-[#B87400] border border-[#B87400]/40 px-2 py-0.5 rounded cursor-default">Trocar</button>
+                    <div class="w-6 h-6 rounded-full bg-[#0C2340] text-white text-[9px] font-bold flex items-center justify-center">YL</div>
+                  </div>
+                </div>
+                <div class="p-5 flex flex-col gap-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <span class="text-base font-semibold text-[#0C2340]">Meus Clientes Importadores</span>
+                      <span class="bg-[#eaf4ee] text-[#1a6e3c] text-xs font-medium px-2 py-0.5 rounded-full">8 clientes ativos</span>
+                    </div>
+                    <div class="bg-[#E09000] text-white text-xs font-semibold px-3 py-1.5 rounded-lg cursor-default">+ Adicionar</div>
+                  </div>
+                  <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <table class="w-full text-sm">
+                      <thead class="bg-gray-50 border-b border-gray-200">
+                        <tr>
+                          <th class="text-left px-4 py-2.5 text-xs font-semibold text-gray-500 uppercase tracking-wide">Cliente</th>
+                          <th class="text-left px-4 py-2.5 text-xs font-semibold text-gray-500 uppercase tracking-wide">CNPJ Raíz</th>
+                          <th class="text-left px-4 py-2.5 text-xs font-semibold text-gray-500 uppercase tracking-wide">Produtos</th>
+                          <th class="text-left px-4 py-2.5 text-xs font-semibold text-gray-500 uppercase tracking-wide">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody class="divide-y divide-gray-100">
+                        <tr class="bg-[#f7f9fc]">
+                          <td class="px-4 py-3 text-xs font-medium text-[#0C2340]">Importadora Alpha Ltda</td>
+                          <td class="px-4 py-3 text-xs text-gray-500 font-mono">12.345.678/...</td>
+                          <td class="px-4 py-3 text-xs font-semibold text-[#0C2340]">23</td>
+                          <td class="px-4 py-3"><span class="bg-[#eaf4ee] text-[#1a6e3c] text-xs font-medium px-2 py-0.5 rounded-full">Ativo</span></td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-3 text-xs font-medium text-[#0C2340]">Tech Imports Brasil</td>
+                          <td class="px-4 py-3 text-xs text-gray-500 font-mono">98.765.432/...</td>
+                          <td class="px-4 py-3 text-xs font-semibold text-[#0C2340]">15</td>
+                          <td class="px-4 py-3"><span class="bg-[#eaf4ee] text-[#1a6e3c] text-xs font-medium px-2 py-0.5 rounded-full">Ativo</span></td>
+                        </tr>
+                        <tr class="bg-[#f7f9fc]">
+                          <td class="px-4 py-3 text-xs font-medium text-[#0C2340]">Distribuidora Sul Ltda</td>
+                          <td class="px-4 py-3 text-xs text-gray-500 font-mono">45.678.901/...</td>
+                          <td class="px-4 py-3 text-xs font-semibold text-[#0C2340]">8</td>
+                          <td class="px-4 py-3"><span class="bg-[#fdf3dc] text-[#7a4f00] text-xs font-medium px-2 py-0.5 rounded-full">Pendente</span></td>
+                        </tr>
+                        <tr>
+                          <td class="px-4 py-3 text-xs font-medium text-[#0C2340]">Comércio Geral SA</td>
+                          <td class="px-4 py-3 text-xs text-gray-500 font-mono">32.198.765/...</td>
+                          <td class="px-4 py-3 text-xs font-semibold text-[#0C2340]">31</td>
+                          <td class="px-4 py-3"><span class="bg-[#eaf4ee] text-[#1a6e3c] text-xs font-medium px-2 py-0.5 rounded-full">Ativo</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="px-4 py-2.5 bg-gray-50 border-t border-gray-100">
+                      <span class="text-[10px] text-gray-400">77 produtos cadastrados · 3 aguardando revisão</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /x-data tabs -->
+      </div><!-- /container -->
+    </section>
+
+
+    <!-- SEÇÃO DIFERENCIAIS -->
+    <section
+      id="diferenciais"
+      class="bg-[#0C2340] py-20 lg:py-28 px-5"
+      aria-labelledby="diferenciais-title"
+    >
+      <div class="max-w-5xl mx-auto">
+
+        <!-- Cabeçalho -->
+        <div class="text-center mb-12">
+          <span class="text-xs font-semibold tracking-widest uppercase text-[#B87400] block mb-3">Por que Fluxa Comex</span>
+          <h2 id="diferenciais-title" class="text-2xl lg:text-4xl font-bold text-white mb-4 leading-tight">
+            O que nos torna diferentes.
+          </h2>
+          <p class="text-white/60 max-w-2xl mx-auto leading-relaxed">
+            Compare e veja por que despachantes escolhem a Fluxa Comex para gerir a transição DUIMP.
+          </p>
+        </div>
+
+        <!-- Tabela comparativa -->
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[640px] bg-white/5 rounded-2xl overflow-hidden">
+            <thead>
+              <tr>
+                <th class="text-left py-4 px-6 text-white/60 text-sm font-medium w-2/5">Funcionalidade</th>
+                <th class="text-center py-4 px-6 text-white/60 text-sm font-medium bg-white/5 w-[30%]">Processo manual / outros</th>
+                <th class="text-center py-4 px-6 bg-[#B87400] w-[30%] rounded-t-xl">
+                  <span class="block text-amber-200 text-[10px] font-medium tracking-wider uppercase mb-1">Recomendado</span>
+                  <span class="text-white font-semibold text-sm">Fluxa Comex</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/10">
+              <tr>
+                <td class="py-4 px-6 text-white/80 text-sm">Validação de NCM com IA</td>
+                <td class="py-4 px-6 text-center bg-white/[0.03]">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-green-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    <span class="text-white/60 text-sm">Disponível</span>
+                  </div>
+                </td>
+                <td class="py-4 px-6 text-center bg-[#B87400]/10 border-l border-r border-[#B87400]/30">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-green-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    <span class="text-white/80 text-sm">Disponível</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="bg-white/[0.02]">
+                <td class="py-4 px-6 text-white/80 text-sm">Score de confiança na classificação</td>
+                <td class="py-4 px-6 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-red-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                    <span class="text-white/40 text-sm">Não disponível</span>
+                  </div>
+                </td>
+                <td class="py-4 px-6 text-center bg-[#B87400]/10 border-l border-r border-[#B87400]/30">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+                    <span class="text-amber-300 text-sm font-medium">Exclusivo — 0 a 100%</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 text-white/80 text-sm">Fila de revisão humana obrigatória</td>
+                <td class="py-4 px-6 text-center bg-white/[0.03]">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-red-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                    <span class="text-white/40 text-sm">Não disponível</span>
+                  </div>
+                </td>
+                <td class="py-4 px-6 text-center bg-[#B87400]/10 border-l border-r border-[#B87400]/30">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+                    <span class="text-amber-300 text-sm font-medium">Exclusivo — score &lt; 90%</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="bg-white/[0.02]">
+                <td class="py-4 px-6 text-white/80 text-sm">Alerta automático de LPCO por órgão</td>
+                <td class="py-4 px-6 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-red-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                    <span class="text-white/40 text-sm">Não disponível</span>
+                  </div>
+                </td>
+                <td class="py-4 px-6 text-center bg-[#B87400]/10 border-l border-r border-[#B87400]/30">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+                    <span class="text-amber-300 text-sm font-medium">Exclusivo — 17 órgãos anuentes</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 text-white/80 text-sm">Atributos condicionantes dinâmicos</td>
+                <td class="py-4 px-6 text-center bg-white/[0.03]">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-red-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                    <span class="text-white/40 text-sm">Não disponível</span>
+                  </div>
+                </td>
+                <td class="py-4 px-6 text-center bg-[#B87400]/10 border-l border-r border-[#B87400]/30">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+                    <span class="text-amber-300 text-sm font-medium">Exclusivo — 130 condicionantes</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="bg-white/[0.02]">
+                <td class="py-4 px-6 text-white/80 text-sm">Parecer PDF auditável por validação</td>
+                <td class="py-4 px-6 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-red-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                    <span class="text-white/40 text-sm">Não disponível</span>
+                  </div>
+                </td>
+                <td class="py-4 px-6 text-center bg-[#B87400]/10 border-l border-r border-[#B87400]/30">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+                    <span class="text-amber-300 text-sm font-medium">Exclusivo — pronto para apresentar</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 text-white/80 text-sm">Gestão multi-tenant (N importadores)</td>
+                <td class="py-4 px-6 text-center bg-white/[0.03]">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-green-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    <span class="text-white/60 text-sm">Disponível em alguns</span>
+                  </div>
+                </td>
+                <td class="py-4 px-6 text-center bg-[#B87400]/10 border-l border-r border-[#B87400]/30">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-green-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    <span class="text-white/80 text-sm">Nativo — isolamento total</span>
+                  </div>
+                </td>
+              </tr>
+              <tr class="bg-white/[0.02]">
+                <td class="py-4 px-6 text-white/80 text-sm">Alíquotas reais II+IPI+PIS+COFINS</td>
+                <td class="py-4 px-6 text-center">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-green-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    <span class="text-white/60 text-sm">Disponível em alguns</span>
+                  </div>
+                </td>
+                <td class="py-4 px-6 text-center bg-[#B87400]/10 border-l border-r border-[#B87400]/30">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 text-green-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                    <span class="text-white/80 text-sm">10.521 NCMs — TIPI + TEC oficiais</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3" class="py-4 px-6 text-center text-white/50 text-sm border-t border-white/10">
+                  <div class="flex items-center justify-center gap-2">
+                    <svg class="w-3.5 h-3.5 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+                    <span>Funcionalidades exclusivas não encontradas em nenhum outro sistema do mercado.</span>
+                  </div>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-10 text-center">
+          <p class="text-white/70 text-sm mb-5">Pronto para ver na prática?</p>
+          <a href="#demo" class="inline-flex items-center gap-2 bg-[#E09000] hover:bg-[#B87400] text-white text-sm font-semibold px-6 py-3 rounded-xl transition-colors">
+            Agendar Demo Gratuita
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SEÇÃO ROADMAP -->
+    <section
+      id="roadmap"
+      class="bg-white py-20 lg:py-28 px-5"
+      aria-labelledby="roadmap-title"
+    >
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Header -->
+        <div class="text-center mb-14">
+          <div class="inline-flex items-center gap-3 mb-4">
+            <span class="text-[#B87400] text-xs font-semibold uppercase tracking-widest">EM DESENVOLVIMENTO</span>
+            <span class="inline-flex items-center gap-1.5 bg-amber-50 text-amber-700 text-xs font-medium px-2.5 py-1 rounded-full border border-amber-200">
+              <span class="w-1.5 h-1.5 bg-amber-500 rounded-full animate-pulse"></span>
+              Em breve
+            </span>
+          </div>
+          <h2 id="roadmap-title" class="text-2xl lg:text-4xl font-bold text-[#0C2340] mb-4 leading-tight">
+            Já estamos construindo<br>o futuro do despacho aduaneiro.
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Estas funcionalidades já estão arquitetadas na plataforma e chegam em breve
+            para completar o ciclo completo de importação.
+          </p>
+        </div>
+
+        <!-- Timeline line (desktop only) -->
+        <div class="hidden lg:block relative mb-2">
+          <div class="absolute top-0 left-[10%] right-[10%] h-px border-t-2 border-dashed border-[#B87400]/40"></div>
+        </div>
+
+        <!-- Cards grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
+
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#B87400]/40 hover:shadow-md transition-all">
+            <span class="inline-block bg-amber-50 text-amber-700 text-xs font-medium px-2 py-1 rounded-full border border-amber-200 mb-3">Em breve</span>
+            <div class="bg-[#0C2340]/5 rounded-xl p-2.5 mb-4 inline-flex">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[#0C2340]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+              </svg>
+            </div>
+            <h3 class="text-[#0C2340] font-semibold text-base mb-2">Integração Portal Único</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">Publicação do catálogo diretamente via API CATP — sem precisar acessar o Portal Único manualmente.</p>
+            <span class="text-xs text-gray-400 font-mono bg-gray-50 px-2 py-1 rounded border border-gray-100">API CATP · Siscomex</span>
+          </div>
+
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#B87400]/40 hover:shadow-md transition-all">
+            <span class="inline-block bg-amber-50 text-amber-700 text-xs font-medium px-2 py-1 rounded-full border border-amber-200 mb-3">Em breve</span>
+            <div class="bg-[#0C2340]/5 rounded-xl p-2.5 mb-4 inline-flex">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[#0C2340]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+              </svg>
+            </div>
+            <h3 class="text-[#0C2340] font-semibold text-base mb-2">OCR de Invoices</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">Leitura automática de faturas comerciais para preencher os dados da DUIMP sem redigitação.</p>
+            <span class="text-xs text-gray-400 font-mono bg-gray-50 px-2 py-1 rounded border border-gray-100">OCR · IA Generativa</span>
+          </div>
+
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#B87400]/40 hover:shadow-md transition-all">
+            <span class="inline-block bg-amber-50 text-amber-700 text-xs font-medium px-2 py-1 rounded-full border border-amber-200 mb-3">Em breve</span>
+            <div class="bg-[#0C2340]/5 rounded-xl p-2.5 mb-4 inline-flex">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[#0C2340]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+              </svg>
+            </div>
+            <h3 class="text-[#0C2340] font-semibold text-base mb-2">Canal em tempo real</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">Consulta do canal de parametrização (Verde/Amarelo/Vermelho/Cinza) após o registro — notificação imediata.</p>
+            <span class="text-xs text-gray-400 font-mono bg-gray-50 px-2 py-1 rounded border border-gray-100">Siscomex · Tempo real</span>
+          </div>
+
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#B87400]/40 hover:shadow-md transition-all">
+            <span class="inline-block bg-amber-50 text-amber-700 text-xs font-medium px-2 py-1 rounded-full border border-amber-200 mb-3">Em breve</span>
+            <div class="bg-[#0C2340]/5 rounded-xl p-2.5 mb-4 inline-flex">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[#0C2340]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5" />
+              </svg>
+            </div>
+            <h3 class="text-[#0C2340] font-semibold text-base mb-2">Alertas de NCM e TIPI</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">Notificação automática quando uma NCM do seu catálogo for alterada ou revogada pela Receita Federal.</p>
+            <span class="text-xs text-gray-400 font-mono bg-gray-50 px-2 py-1 rounded border border-gray-100">Monitoramento · Push</span>
+          </div>
+
+          <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#B87400]/40 hover:shadow-md transition-all">
+            <span class="inline-block bg-amber-50 text-amber-700 text-xs font-medium px-2 py-1 rounded-full border border-amber-200 mb-3">Em breve</span>
+            <div class="bg-[#0C2340]/5 rounded-xl p-2.5 mb-4 inline-flex">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[#0C2340]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+              </svg>
+            </div>
+            <h3 class="text-[#0C2340] font-semibold text-base mb-2">API REST para ERP</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-3">Integre a Fluxa Comex ao seu sistema de gestão via API documentada com autenticação por token.</p>
+            <span class="text-xs text-gray-400 font-mono bg-gray-50 px-2 py-1 rounded border border-gray-100">REST API · Webhooks</span>
+          </div>
+
+        </div>
+
+        <!-- Footer da seção -->
+        <div class="mt-12 pt-8 border-t border-gray-100">
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+            <div class="flex items-start gap-3">
+              <div class="bg-amber-50 rounded-lg p-2 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#B87400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-gray-600">Quer ser avisado quando lançar?</p>
+                <a href="#demo" class="text-sm font-medium text-[#B87400] hover:text-[#E09000] transition-colors">Entrar na lista de espera →</a>
+              </div>
+            </div>
+            <div class="hidden sm:block w-px h-10 bg-gray-200"></div>
+            <div class="flex items-start gap-3">
+              <div class="bg-amber-50 rounded-lg p-2 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#B87400]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 9v7.5" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-gray-600">Tem uma necessidade específica?</p>
+                <a href="#demo" class="text-sm font-medium text-[#B87400] hover:text-[#E09000] transition-colors">Fale com nosso time →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SEÇÃO DEMO / FORMULÁRIO -->
+    <section
+      id="demo"
+      class="bg-white py-20 lg:py-28 px-5"
+      aria-labelledby="demo-title"
+    >
+      <div class="max-w-5xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+
+          <!-- Coluna esquerda — Benefícios -->
+          <div class="lg:w-5/12">
+            <span class="text-[#B87400] text-xs font-semibold uppercase tracking-widest mb-4 block">AGENDAR DEMO</span>
+            <h2 id="demo-title" class="text-2xl lg:text-3xl font-bold text-[#0C2340] mb-4 leading-tight">
+              Veja a Fluxa Comex<br>em ação.
+            </h2>
+            <p class="text-gray-600 leading-relaxed mb-8">
+              Demonstração gratuita de 30 minutos, sem compromisso. Mostramos a plataforma funcionando com dados reais.
+            </p>
+
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#B87400] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                <span class="text-gray-700 text-sm">Validação de NCM ao vivo com IA</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#B87400] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                <span class="text-gray-700 text-sm">Montagem do Catálogo DUIMP na prática</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#B87400] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                <span class="text-gray-700 text-sm">Gestão multi-tenant para despachantes</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#B87400] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                <span class="text-gray-700 text-sm">Export PDF e Excel profissional</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#B87400] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                <span class="text-gray-700 text-sm">Tire todas as suas dúvidas com nosso time</span>
+              </li>
+            </ul>
+
+            <div class="flex items-center gap-2 mb-8">
+              <svg class="w-4 h-4 text-[#B87400] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span class="text-gray-500 text-sm">Respondemos em até 24 horas úteis</span>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-4 border border-gray-100">
+              <p class="text-gray-600 text-sm italic leading-relaxed mb-3">
+                "A Fluxa Comex reduziu em 80% o tempo que gastávamos para montar o catálogo de produtos dos nossos clientes."
+              </p>
+              <span class="text-gray-400 text-xs font-medium">— Despachante, São Paulo</span>
+            </div>
+          </div>
+
+          <!-- Coluna direita — Formulário -->
+          <div class="lg:w-7/12 w-full">
+            <div class="bg-white border border-gray-200 rounded-2xl shadow-lg p-8">
+
+              <h3 class="text-[#0C2340] font-semibold text-lg mb-6">Agendar demonstração gratuita</h3>
+
+              <!-- Mensagem de sucesso (Formspree) -->
+              <div data-fs-success
+                   class="hidden bg-green-50 border border-green-200 rounded-xl p-6 text-center mb-6">
+                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                </div>
+                <div class="text-green-700 font-semibold text-base mb-1">Solicitação recebida!</div>
+                <p class="text-green-600 text-sm">Entraremos em contato em até 24 horas úteis para agendar sua demonstração.</p>
+              </div>
+
+              <div data-fs-error
+                   class="hidden bg-red-50 border border-red-200 rounded-xl p-4 text-red-700 text-sm mb-6">
+              </div>
+
+              <!-- Formulário Formspree -->
+              <form id="demo-form" class="space-y-4">
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nome completo <span class="text-red-400">*</span></label>
+                    <input type="text" name="nome" data-fs-field required placeholder="Seu nome"
+                      class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:border-[#B87400] focus:ring-1 focus:ring-[#B87400] outline-none transition">
+                    <span data-fs-error="nome" class="text-red-500 text-xs mt-1 block"></span>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">E-mail corporativo <span class="text-red-400">*</span></label>
+                    <input type="email" name="email" data-fs-field required placeholder="seu@escritorio.com.br"
+                      class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:border-[#B87400] focus:ring-1 focus:ring-[#B87400] outline-none transition">
+                    <span data-fs-error="email" class="text-red-500 text-xs mt-1 block"></span>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Empresa / Escritório <span class="text-red-400">*</span></label>
+                    <input type="text" name="empresa" data-fs-field required placeholder="Nome do seu escritório"
+                      class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:border-[#B87400] focus:ring-1 focus:ring-[#B87400] outline-none transition">
+                    <span data-fs-error="empresa" class="text-red-500 text-xs mt-1 block"></span>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">WhatsApp <span class="text-red-400">*</span></label>
+                    <input type="tel" name="whatsapp" data-fs-field required placeholder="(11) 99999-9999"
+                      class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:border-[#B87400] focus:ring-1 focus:ring-[#B87400] outline-none transition">
+                    <span data-fs-error="whatsapp" class="text-red-500 text-xs mt-1 block"></span>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Quantos clientes importadores você atende?</label>
+                  <select name="clientes"
+                    class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 focus:border-[#B87400] focus:ring-1 focus:ring-[#B87400] outline-none transition bg-white">
+                    <option value="">Selecione...</option>
+                    <option value="ate-5">Até 5 clientes</option>
+                    <option value="6-20">6 a 20 clientes</option>
+                    <option value="21-50">21 a 50 clientes</option>
+                    <option value="mais-50">Mais de 50 clientes</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">Mensagem <span class="text-gray-400 font-normal">(opcional)</span></label>
+                  <textarea name="mensagem" rows="3" placeholder="Alguma dúvida ou necessidade específica?"
+                    class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:border-[#B87400] focus:ring-1 focus:ring-[#B87400] outline-none transition resize-none"></textarea>
+                </div>
+
+                <button type="submit" data-fs-submit-btn
+                  class="w-full bg-[#B87400] hover:bg-[#9a6200] text-white font-semibold py-4 rounded-lg transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed">
+                  Agendar Minha Demo Gratuita
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </button>
+
+                <div class="flex items-center justify-center gap-1.5 pt-1">
+                  <svg class="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                  <span class="text-gray-400 text-xs">Seus dados estão seguros. Não fazemos spam.</span>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <!-- /MAIN -->
+
+
+  <!-- FOOTER -->
+  <footer
+    class="bg-[#081929] py-12 px-5"
+    aria-label="Rodapé"
+  >
+    <div class="max-w-6xl mx-auto">
+
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+        <div>
+          <span class="text-white font-bold text-lg">Fluxa Comex</span>
+          <p class="text-[#B87400] text-sm mt-0.5">Conformidade Aduaneira com Inteligência Avançada</p>
+        </div>
+        <nav class="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <a href="#" class="text-white/50 text-sm hover:text-white transition-colors">Política de Privacidade</a>
+          <span class="text-white/20 text-sm">·</span>
+          <a href="#" class="text-white/50 text-sm hover:text-white transition-colors">Termos de Uso</a>
+          <span class="text-white/20 text-sm">·</span>
+          <a href="#demo" class="text-white/50 text-sm hover:text-white transition-colors">Contato</a>
+        </nav>
+      </div>
+
+      <div class="border-t border-white/10 my-6"></div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+        <span class="text-white/40 text-sm">© 2025 Fluxa Comex. Todos os direitos reservados.</span>
+        <span class="text-white/30 text-xs italic">Feito com IA para o mercado aduaneiro brasileiro.</span>
+      </div>
+
+    </div>
+  </footer>
+
+</div><!-- /wrapper -->
+  </main>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      if (window.formspree) {
+        window.formspree("initForm", {
+          formElement: "#demo-form",
+          formId: "xzdybano"
+        });
+      }
+    });
+  </script>
+</body>
+</html>
